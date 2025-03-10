@@ -1,0 +1,39 @@
+<h2 class="text-center my-4">All Patients</h2>
+<div class="text-center mt-3 d-flex flex-wrap gap-2 justify-content-center">
+    <a routerLink="/patients/add" class="btn btn-success">Add Patient</a>
+    <a routerLink="/patients/update" class="btn btn-warning">Update Patient</a>
+    <a routerLink="/patients/details" class="btn btn-info">Get Patient Details with Records</a>
+</div>
+<br>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patients">
+                    <td>{{ patient.patientId }}</td>
+                    <td>{{ patient.patientName }}</td>
+                    <td>{{ patient.patientAge }}</td>
+                    <td>{{ patient.gender }}</td>
+                    <td>{{ patient.phone }}</td>
+                    <td>{{ patient.patientAddress }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a routerLink="/patients" class="btn btn-outline-secondary">Back</a>
+    </div>
+
+    
+</div>

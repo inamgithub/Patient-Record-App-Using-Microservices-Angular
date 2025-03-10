@@ -1,0 +1,48 @@
+<h2 class="text-center my-4">Add Patient</h2>
+<div class="text-center mt-3 d-flex flex-wrap gap-2 justify-content-center">
+    <a routerLink="/patients/all" class="btn btn-success">Get All Patient</a>
+    <a routerLink="/patients/update" class="btn btn-warning">Update Patient</a>
+    <a routerLink="/patients/details" class="btn btn-info">Get Patient Details with Records</a>
+</div>
+<br>
+<div class="container">
+    <form (ngSubmit)="addPatient()" class="card p-4 shadow-lg">
+        <h3 class="text-center mb-3">Enter Patient Details</h3>
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="patient.patientName" name="patientName" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input type="number" class="form-control" [(ngModel)]="patient.patientAge" name="patientAge" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-select" [(ngModel)]="patient.gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" [(ngModel)]="patient.phone" name="phone" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <textarea class="form-control" rows="2" [(ngModel)]="patient.patientAddress" name="patientAddress" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Add Patient</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a routerLink="/patients" class="btn btn-outline-secondary">Back</a>
+    </div>
+</div>

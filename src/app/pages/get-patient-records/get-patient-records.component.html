@@ -1,0 +1,54 @@
+<h2 class="text-center my-4">Get Patient Details with Records</h2>
+
+<div class="text-center mt-3 d-flex flex-wrap gap-2 justify-content-center">
+  <a routerLink="/patients/add" class="btn btn-success">Add Patient</a>
+  <a routerLink="/patients/update" class="btn btn-warning">Update Patient</a>
+  <a routerLink="/patients/all" class="btn btn-info">Get All Patient</a>
+</div>
+<br>
+
+
+<div class="container">
+  <div class="card p-4 shadow-lg">
+    
+    <div class="mb-3">
+      <label class="form-label fw-bold">Patient ID:</label>
+      <input type="number" class="form-control" [(ngModel)]="patientId" name="patientId" required />
+    </div>
+    
+    <div class="text-center mb-3">
+      <button class="btn btn-primary" (click)="getDetails()">Get Details</button>
+    </div>
+    
+    <div *ngIf="patientDetails">
+        <h3>Data Loaded: {{ patientDetails?.patientName }}</h3>
+        <div class="patient-info mb-4">
+          <h3 class="text-center text-primary">Patient Information</h3>
+          <p><strong>Patient ID : </strong> {{ patientDetails.patientDetails.patientId }}</p>
+          <p><strong>Name : </strong> {{ patientDetails.patientDetails.patientName }}</p>
+          <p><strong>Age : </strong> {{ patientDetails.patientDetails.patientAge }}</p>
+          <p><strong>Gender : </strong> {{ patientDetails.patientDetails.gender }}</p>
+          <p><strong>Phone : </strong> {{ patientDetails.patientDetails.phone }}</p>
+          <p><strong>Address : </strong> {{ patientDetails.patientDetails.patientAddress }}</p>
+        </div>
+      
+        <div class="patient-records">
+          <h3 class="text-center text-primary">Patient Records</h3>
+          <ul class="list-group">
+            <li *ngFor="let record of patientDetails.patientRecords" class="list-group-item">
+              <p><strong>RecordId:</strong> {{ record.recordId }}</p>
+              <p><strong>Diagnosis:</strong> {{ record.diagnosis }}</p>
+              <p><strong>Treatment:</strong> {{ record.treatment }}</p>
+              <p>Patient Id: {{ record.patientId }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    
+    <div class="text-center mt-4">
+      <a routerLink="/patients" class="btn btn-outline-secondary">Back</a>
+    </div>
+    
+  </div>
+</div>

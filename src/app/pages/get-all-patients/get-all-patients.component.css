@@ -1,0 +1,29 @@
+.tableclass {
+    margin: 10px auto;
+    padding: 12px;
+    border: 1px solid black;
+    width: 50%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #8e8c8c;
+    font-weight: bold;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+button{
+    width: auto;
+    margin-left: 50px;
+    padding: 15px;
+    background-color: #cecece;
+}
